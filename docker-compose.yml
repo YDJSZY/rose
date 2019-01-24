@@ -1,9 +1,9 @@
 version: '3'
 services:
-  rose_${env}_web:
+  web:
     build: .
-    image: rose_${env}_web:${webTag}
-    container_name: rose_${env}_web
+    image: rose_${EGG_SERVER_ENV}_web:${webTag}
+    container_name: rose_${EGG_SERVER_ENV}_web
     ports:
       - ${webPort}:3000
     depends_on:
@@ -12,13 +12,13 @@ services:
     links:
       - db
       - redis
-  rose_${env}_redis:
+  redis:
     image: "redis:alpine"
-    container_name: rose_${env}_redis
-  rose_${env}_db:
+    container_name: rose_${EGG_SERVER_ENV}_redis
+  db:
     image: "mysql"
     command: --default-authentication-plugin=mysql_native_password
-    container_name: rose_${env}_db
+    container_name: rose_${EGG_SERVER_ENV}_db
     restart: always
     expose:
       - 3306

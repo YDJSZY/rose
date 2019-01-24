@@ -24,12 +24,12 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-rose",
+    "start": "npx sequelize db:migrate && egg-bin dev",
     "stop": "egg-scripts stop --title=egg-server-rose",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "export EGG_SERVER_ENV=test && npx sequelize db:migrate && egg-bin dev",
-    "local": "export EGG_SERVER_ENV=local && npx sequelize db:migrate && egg-bin dev",
+    "local": "node test.js && npx sequelize db:migrate && egg-bin dev",
     "prod": "export EGG_SERVER_ENV=prod && npx sequelize db:migrate && egg-bin dev",
     "cov": "egg-bin cov",
     "lint": "eslint .",

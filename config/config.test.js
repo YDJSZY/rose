@@ -1,15 +1,16 @@
 'use strict';
 
 module.exports = appInfo => {
+  console.log('test')
   const config = exports = {};
 
   config.sequelize = {
-    host: 'rose_test_db',
+    host: 'db',
   };
 
   config.redis = {
     client: {
-      host: 'rose_test_redis', // Redis host
+      host: 'redis', // Redis host
     },
   };
 

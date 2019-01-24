@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = appInfo => {
+  console.log('default')
   const config = exports = {};
 
   config.cluster = {
