@@ -25,3 +25,5 @@ services:
     environment:
       MYSQL_DATABASE: ${database}
       MYSQL_ROOT_PASSWORD: ${mysqlPwd}
+    volumes:
+      - /Users/lww/roseData:/var/lib/mysql
